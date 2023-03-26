@@ -49,18 +49,22 @@ void matrix_vector_product(vector<vector<double>> A, vector<double> x, vector<do
 
 int main() {
     // generate a random matrix A and vector b
-    const int n = 4096;
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<> dis(0.0, 1.0);
-    vector<vector<double>> A(n, vector<double>(n));
-    vector<double> b(n);
-    for (int i = 0; i < n; i++) {
-        b[i] = dis(gen);
-        for (int j = 0; j < n; j++) {
-            A[i][j] = dis(gen);
-        }
-    }
+    // const int n = 4096;
+    // std::random_device rd;
+    // std::mt19937 gen(rd());
+    // std::uniform_real_distribution<> dis(0.0, 1.0);
+    // vector<vector<double>> A(n, vector<double>(n));
+    // vector<double> b(n);
+    // for (int i = 0; i < n; i++) {
+    //     b[i] = dis(gen);
+    //     for (int j = 0; j < n; j++) {
+    //         A[i][j] = dis(gen);
+    //     }
+    // }
+    const int n = 5;
+    vector<double> b{1, 2, 0, 0, 5};
+    vector<vector<double>> A{{1, 2, 0}, {0, 0, 4}, {4, 5, 1}, {0, 1, 0}, {0, 0, 1}};
+
 
     vector<double> x(n, 1); // initial guess for x
     vector<double> r(n); // residual
